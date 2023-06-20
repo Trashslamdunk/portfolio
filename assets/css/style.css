@@ -1,0 +1,544 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  line-height: 1em;
+  vertical-align: baseline;
+}
+
+::-moz-selection {
+  background: #ccc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #ccc;
+  text-shadow: none;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+ol,
+ul,
+li {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+audio,
+canvas,
+video {
+  display: inline-block;
+  max-width: 100%;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+button,
+html input[type=button],
+input[type=reset],
+input[type=submit] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+img {
+  display: block;
+  vertical-align: middle;
+  -o-object-fit: contain;
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+fieldset {
+  border: 1px solid #ccc;
+}
+
+textarea {
+  resize: vertical;
+  overflow: auto;
+  vertical-align: top;
+}
+
+button,
+input,
+textarea,
+input,
+select {
+  display: block;
+  border: none;
+  background: none;
+  font-family: inherit;
+  color: inherit;
+}
+
+.hide {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+
+a,
+button {
+  cursor: revert;
+}
+
+/* removes spacing between cells in tables */
+
+table {
+  border-collapse: collapse;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+
+textarea {
+  white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+
+meter {
+  -webkit-appearance: revert;
+  -moz-appearance: revert;
+       appearance: revert;
+}
+
+/* reset default text opacity of input placeholder */
+
+::-moz-placeholder {
+  color: unset;
+}
+
+::placeholder {
+  color: unset;
+}
+
+/* fix the feature of 'hidden' attribute.
+  display:revert; revert to element instead of attribute */
+
+:where([hidden]) {
+  display: none;
+}
+
+/* revert for bug in Chromium browsers
+  - fix for the content editable attribute will work properly. */
+
+:where([contenteditable]) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+
+:where([draggable="true"]) {
+  -webkit-user-drag: element;
+}
+
+@font-face {
+  font-family: "Lato";
+  font-display: swap;
+  src: url("../fonts/Lato-Black.woff2") format("woff2"), url("../fonts/Lato-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lato";
+  font-display: swap;
+  src: url("../fonts/Lato-Bold.woff2") format("woff2"), url("../fonts/Lato-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lato";
+  font-display: swap;
+  src: url("../fonts/Lato-Light.woff2") format("woff2"), url("../fonts/Lato-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lato";
+  font-display: swap;
+  src: url("../fonts/Lato-Regular.woff2") format("woff2"), url("../fonts/Lato-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lato";
+  font-display: swap;
+  src: url("../fonts/Lato-Thin.woff2") format("woff2"), url("../fonts/Lato-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+}
+
+:root {
+  --ff-1: "Roboto", sans-serif;
+  --container: 1155px;
+  --clr-mainColor: #1D1919;
+  --clr-white: #ffffff;
+  --clr-black: #000000;
+}
+
+html {
+  font-size: 1rem;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.2em;
+  color: var(--clr-white);
+  background-color: var(--clr-mainColor);
+  min-height: 100%;
+  letter-spacing: 0.04em;
+  display: grid;
+  grid-template-rows: 1fr min-content;
+  align-content: start;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: var(--container);
+  width: min(100% - 30px, 1155px);
+  margin-inline: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2em;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: clamp(1.9rem, 5vw + 0.1rem, 3.125rem);
+  font-weight: 400;
+}
+
+h2 {
+  font-size: clamp(1.7rem, 5vw + 0.1rem, 2.5rem);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+p {
+  line-height: 1.2em;
+}
+
+section {
+  padding: var(--section-pd) 0;
+}
+
+a {
+  display: block;
+}
+
+section:nth-child(1) {
+  --section-pd: 50px;
+}
+
+section:nth-child(2) {
+  --section-pd: 50px;
+}
+
+section:nth-child(3) {
+  --section-pd: 50px;
+}
+
+section:nth-child(4) {
+  --section-pd: 50px;
+}
+
+section:nth-child(5) {
+  --section-pd: 50px;
+}
+
+.header .logo__img {
+  width: 100px;
+}
+
+.nav__link svg {
+  width: 30px;
+  height: 30px;
+}
+
+.hero__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero__wrapp {
+  display: flex;
+  gap: 50px;
+}
+
+.hero__img {
+  max-width: 400px;
+}
+
+.hero__name {
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  order: -2;
+}
+
+.hero__pos {
+  text-transform: uppercase;
+  color: rgba(231, 189, 116, 0.8);
+  order: -2;
+  letter-spacing: 0.3em;
+  margin-bottom: 100px;
+}
+
+.hero__title {
+  max-width: 550px;
+  text-align: left;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+.about__title {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+}
+
+.about__text {
+  line-height: 1.3em;
+  font-size: 1.375rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.about__text a {
+  color: #eac381;
+  display: inline;
+}
+
+.about__text:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.projects__title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.projects__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 375px), 1fr));
+  gap: 35px;
+}
+
+.projects__item {
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: 560px;
+  justify-self: center;
+  height: 315px;
+  width: 100%;
+}
+
+.projects__item iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.audio__inner {
+  max-width: 500px;
+}
+
+.audio__title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.audio__list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.audio__link {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.footer {
+  padding: 50px 0;
+}
+
+.footer__title {
+  margin-bottom: 20px;
+}
+
+.footer__list {
+  display: flex;
+  gap: 20px;
+}
+
+.footer__link {
+  border-radius: 100vmax;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: 0.2s linear;
+}
+
+.footer__link svg {
+  width: 30px;
+  height: 30px;
+  transition: 0.2s linear;
+  stroke: #0000;
+}
+
+.footer__link:hover {
+  background-color: #fff;
+}
+
+@media (max-width: 1155px) {
+  section:nth-child(1) {
+    --section-pd: calc(
+      15px + 35 * ((100vw - 375px) / 780)
+    );
+  }
+
+  section:nth-child(2) {
+    --section-pd: calc(
+      15px + 35 * ((100vw - 375px) / 780)
+    );
+  }
+
+  section:nth-child(3) {
+    --section-pd: calc(
+      15px + 35 * ((100vw - 375px) / 780)
+    );
+  }
+
+  section:nth-child(4) {
+    --section-pd: calc(
+      15px + 35 * ((100vw - 375px) / 780)
+    );
+  }
+
+  section:nth-child(5) {
+    --section-pd: calc(
+      15px + 35 * ((100vw - 375px) / 780)
+    );
+  }
+}
+
+@media (max-width: 767.98px) {
+  .hero__wrapp {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .hero__pos {
+    margin-bottom: 30px;
+  }
+
+  .about__title {
+    margin-bottom: 25px;
+  }
+
+  .audio__title {
+    margin-bottom: 25px;
+  }
+
+  .audio__inner {
+    margin-inline: auto;
+  }
+
+  .footer {
+    padding: 25px;
+  }
+
+  .footer__title {
+    text-align: center;
+  }
+
+  .footer__list {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 375px) {
+  section:nth-child(1) {
+    --section-pd: 15px;
+  }
+
+  section:nth-child(2) {
+    --section-pd: 15px;
+  }
+
+  section:nth-child(3) {
+    --section-pd: 15px;
+  }
+
+  section:nth-child(4) {
+    --section-pd: 15px;
+  }
+
+  section:nth-child(5) {
+    --section-pd: 15px;
+  }
+}
